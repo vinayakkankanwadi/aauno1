@@ -1,4 +1,4 @@
-# AAUNO
+# [AAUNO](https://vinayakkankanwadi.github.io/aauno/)
 
 # Goals
 There is a wider goal towards which the following goals lead to.
@@ -32,3 +32,8 @@ It has the following phases
 - [ ] Drone payload capacity by carrying loads (Aim: Over 50+kg)
 - [ ] Drone battery technologies.
 - [ ] Drone battery exchange.
+
+### Important Dates
+- [February 18, 2018: NVIDIA JETSON CHALLENGE](https://developer.nvidia.com/embedded/community/jetson-challenge)
+
+### [LICENSE](https://github.com/vinayakkankanwadi/aauno/blob/master/LICENSE.md)
