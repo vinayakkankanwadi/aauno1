@@ -1,4 +1,4 @@
-# AAUNO
+# [AAUNO](https://vinayakkankanwadi.github.io/aauno/)
 
 # Goals
 There is a wider goal towards which the following goals lead to.
@@ -33,4 +33,4 @@ It has the following phases
 - [ ] Drone battery technologies.
 - [ ] Drone battery exchange.
 
-## [LICENSE](https://github.com/vinayakkankanwadi/aauno/blob/master/LICENSE.md)
+### [LICENSE](https://github.com/vinayakkankanwadi/aauno/blob/master/LICENSE.md)
