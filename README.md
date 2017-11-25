@@ -32,3 +32,5 @@ It has the following phases
 - [ ] Drone payload capacity by carrying loads (Aim: Over 50+kg)
 - [ ] Drone battery technologies.
 - [ ] Drone battery exchange.
+
+## [LICENSE](https://github.com/vinayakkankanwadi/aauno/blob/master/LICENSE.md)
