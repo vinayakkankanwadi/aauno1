@@ -3,6 +3,9 @@
 # Goals
 There is a wider goal towards which the following goals lead to.
 
+## TOC
+- [HOW-TO](https://github.com/vinayakkankanwadi/aauno/blob/master/howto/README.md)
+
 ## Goal 1
 Building smart drone from scratch to do the following.
 It has the following phases
