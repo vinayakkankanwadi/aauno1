@@ -10,3 +10,9 @@ Development, Testing, Software, Hardware setup goes here
 [DOCKER](https://www.docker.com/) is the preferred way to set up a environment as it allows the user to completely isolate all software changes.
 
 [MAC](https://download.docker.com/mac/stable/Docker.dmg)
+
+### docker version
+```
+docker -v
+Docker version 17.09.0-ce, build afdb6d4
+```
