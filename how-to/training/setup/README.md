@@ -11,7 +11,7 @@ Development, Testing, Software, Hardware setup goes here
 
 [MAC](https://download.docker.com/mac/stable/Docker.dmg)
 
-### docker version
+### Docker version
 ```
 docker -v
 Docker version 17.09.0-ce, build afdb6d4
