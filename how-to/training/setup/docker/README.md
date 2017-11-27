@@ -5,9 +5,13 @@
 
 [MAC](https://download.docker.com/mac/stable/Docker.dmg)
 
-### Command
+### Steps
 ```
-docker run -it aauno/base
+- Install docker
+- Run docker image
+  - docker run -it aauno/base
+- Check ubuntu version
+  - uname -a
 ```
 
 ## Process for updating docker image
