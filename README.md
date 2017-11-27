@@ -5,6 +5,7 @@ There is a wider goal towards which the following goals lead to.
 
 ## TOC
 - [HOW-TO](https://github.com/vinayakkankanwadi/aauno/blob/master/how-to/README.md)
+- [SETUP](https://github.com/vinayakkankanwadi/aauno/blob/master/how-to/training/setup/README.md)
 
 ## Goal 1
 Building smart drone from scratch to do the following.
