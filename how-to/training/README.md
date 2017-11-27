@@ -3,6 +3,7 @@ These are mainly inspired by self driving car and credit goes to udacity team
 
 ## TOC
 
+- [SETUP](https://github.com/vinayakkankanwadi/aauno/blob/master/how-to/training/setup/README.md)
 - PROBLEM EXAMPLE (Finding Lanes)
   - [PROBLEM](https://youtu.be/aIkAcXVxf2w)
   - [Color Selection](https://youtu.be/bNOWJ9wdmhk)
