@@ -20,6 +20,16 @@ These are mainly inspired by self driving car and credit goes to udacity team
   - Logistic Regression
     - [Problem](https://youtu.be/kSs6O3R7JUI)
     - [Solution](https://youtu.be/1iNylA3fJDs)
+  - [Neural Networks](https://youtu.be/Mqogpnp1lrU)
+  - [Perceptron] TBD
+    - AND
+    - OR & NOT
+    - XOR
+  - [Simple Neural Network] TBD
+  - [Gradient Descent] TBD    
+  - [Multilayer perceptrons] TBD
+  - [Backpropagation]
+  - [Create Own NN]
 - DEEP LEARNING (fastai)
   - [Lesson1 - IMAGE RECOGNITION](http://wiki.fast.ai/index.php/Lesson_1_Notes)
   - [Lesson2 - CNN](http://wiki.fast.ai/index.php/Lesson_2_Notes)
