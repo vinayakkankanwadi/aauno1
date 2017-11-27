@@ -5,6 +5,13 @@
 
 [MAC](https://download.docker.com/mac/stable/Docker.dmg)
 
+### Command
+```
+docker run -it aauno/base
+```
+
+## Process for updating docker image
+
 ### Docker version
 ```
 docker -v
