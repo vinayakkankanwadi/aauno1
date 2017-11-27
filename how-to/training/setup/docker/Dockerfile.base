@@ -1,0 +1,6 @@
+#BASE IMAGE
+FROM aarch64/ubuntu
+
+#AUTHOR vinayakkankanwadi@hotmail.com
+MAINTAINER vinayakkankanwadi@hotmail.com
+# This is the base container for AAUNO
