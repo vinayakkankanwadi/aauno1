@@ -1,5 +1,5 @@
 #BASE IMAGE
-FROM ubuntu:16.04f
+FROM ubuntu:16.04
 
 #AUTHOR @vinayak
 MAINTAINER @vinayak
