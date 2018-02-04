@@ -1,5 +1,7 @@
 # [AAUNO](https://vinayakkankanwadi.github.io/aauno/)
 
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/vinayakkankanwadi/aauno.svg?columns=all)](https://waffle.io/vinayakkankanwadi/aauno) 
+
 # Goals
 There is a wider goal towards which the following goals lead to.
 
