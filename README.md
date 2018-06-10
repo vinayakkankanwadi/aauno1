@@ -36,5 +36,7 @@ It has the following phases
 - [ ] Drone battery technologies.
 - [ ] Drone battery exchange.
 
+### Hardware
+- Flight Controller - [Pixhawk 4](http://www.holybro.com/product/55)
 
 ### [LICENSE](https://github.com/vinayakkankanwadi/aauno/blob/master/LICENSE.md)
