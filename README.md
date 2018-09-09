@@ -38,5 +38,14 @@ It has the following phases
 
 ### Hardware
 - Flight Controller - [Pixhawk 4](http://www.holybro.com/product/55)
+- Transmiter - [Taranis X9D plus](https://www.frsky-rc.com/product/taranis-x9d-plus-2/)
 
+### Software
+- QQGroundControl - [QGroundControl](https://github.com/vinayakkankanwadi/qgroundcontrol)
+```
+  QGroundControl is an app to configure and fly a PX4 based autopilot. It is cross platform and supports all major operating systems:
+
+    Mobile: Android and iOS (currently focused on tablet)
+    Desktop: Windows, Linux, Mac OS
+```
 ### [LICENSE](https://github.com/vinayakkankanwadi/aauno/blob/master/LICENSE.md)
