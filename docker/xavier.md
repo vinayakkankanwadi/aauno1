@@ -41,3 +41,10 @@ curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 sudo apt-get update
+
+
+https://gist.github.com/JasonAtNvidia/e03e6675849d1d4049b85ea41efb2171#file-txdocker
+
+Short Bash script to enable use of the GPU within a docker container running on an NVIDIA Jetson TX2. Place inside /usr/local/bin/, chmod +x txdocker, ensure it is in your system PATH, and use just as you would the docker command.
+ txdocker
+
