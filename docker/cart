@@ -1,0 +1,181 @@
+Cartographer+pixhawk flight control +px4 firmware +ros kinetic to achieve take-off without GPS
+Cartographer configuration
+Launch file creation
+Change configuration file
+Flight control settings
+test
+
+The previous blog talked about the installation of cartographer and mavros, and the following tutorial on indoor positioning of drones. Simply put, just put the location information of the cartographer into the flight control and merge it.
+The computer platform I use is tx2. The cartographer is available in 2D with IMU.
+Cartographer configuration
+The location of cartographer is in tf. If we want to use its location information, we only need to get the location information of base_link. The following package can be used to solve this problem simply. The function of this package is to publish base_link under map. Pose information.
+
+sudo apt install ros-kinetic-robot-pose-publisher
+1
+Launch file creation
+install_isolated/share/cartographer_ros/launchCreate a new launch file in this directory of the workspace to run the cartographer for the indoor positioning of the drone, to start the radar and cartographer, and then publish the pose information.
+
+gedit ~/cartographer_ws/install_isolated/share/cartographer_ros/launch/hokuyo_2d.launch
+1
+Paste the following content and save it and exit.
+
+<launch>
+
+  <node name="urg_node" pkg="urg_node" type="urg_node" respawn="true" output="screen">
+    <param name="calibrate_time" value="true"/>
+    <param name="serial_port" value="/dev/sensors/hokuyo_H1747925"/>
+ </node>
+ 
+  <param name="/use_sim_time" value="false" />
+
+  <node name="cartographer_node"
+    pkg="cartographer_ros"
+    type="cartographer_node"
+    args="-configuration_directory $(find cartographer_ros)/configuration_files -configuration_basename hokuyo_2d.lua"
+    output="screen">
+    <remap from="imu" to="mavros/imu/data_raw" />
+  </node>
+
+  <node name="cartographer_occupancy_grid_node"
+    pkg="cartographer_ros"
+    type="cartographer_occupancy_grid_node" />
+
+  <node name="robot_pose_publisher" pkg="robot_pose_publisher" type="robot_pose_publisher" respawn="true" output="screen" >
+    <param name ="is_stamped" value = "true" />
+    <param name ="publish_frequency" value = "20" />
+    <remap from="/robot_pose" to="/mavros/vision_pose/pose"/> 
+  </node>
+
+  <node pkg="tf" type="static_transform_publisher" name="join_laser" args="0 0 0 0 0 0 base_link laser 10" />
+  <node pkg="tf" type="static_transform_publisher" name="join_imu" args="0 0 -0.15 0 0 0 laser imu 10" />
+</launch>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+twenty one
+twenty two
+twenty three
+twenty four
+25
+26
+27
+28
+29
+30
+Change configuration file
+The configuration file is in the directory below the workspace.
+
+install_isolated/share/cartographer_ros/configuration_files/
+1
+Add a new profile
+
+gedit ~/cartographer_ws/install_isolated/share/cartographer_ros/configuration_files/hokuyo_2d.lua 
+1
+Then paste the following content into it and save and exit.
+
+include "map_builder.lua"
+include "trajectory_builder.lua"
+
+options = {
+
+    map_builder = MAP_BUILDER,
+    trajectory_builder = TRAJECTORY_BUILDER,
+    map_frame = "map",
+    tracking_frame = "base_link",
+    published_frame = "base_link",
+    odom_frame = "odom",
+    provide_odom_frame = true,
+    use_odometry = false,
+    use_nav_sat = false,
+    use_landmarks = false,
+    publish_frame_projected_to_2d = false,
+    num_laser_scans = 1,
+    num_multi_echo_laser_scans = 0,
+    num_subdivisions_per_laser_scan = 1,
+    rangefinder_sampling_ratio = 1,
+    odometry_sampling_ratio = 1,
+    fixed_frame_pose_sampling_ratio = 1,
+    imu_sampling_ratio = 1,
+    landmarks_sampling_ratio = 1,
+    num_point_clouds = 0,
+    lookup_transform_timeout_sec = 0.2,
+    submap_publish_period_sec = 0.3,
+    pose_publish_period_sec = 5e-3,
+    trajectory_publish_period_sec = 30e-3,
+}
+
+MAP_BUILDER.use_trajectory_builder_2d = true
+
+return options
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+twenty one
+twenty two
+twenty three
+twenty four
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+At this point, the cartographer is ready to finish.
+
+Flight control settings
+The settings on the flight control are much simpler.
+More parameter EKF2_AID_MASKto cancel all other parameters, and then check the vision position fusionoption, on behalf of the integration of the flight control radar will be passed in the location information. Next, set the parameters according to the radar relative positions of flight control EKF2_EV_POS_X, EKF2_EV_POS_Y, EKF2_EV_POS_Z. This coordinate system is defined by px4.
+Then you can set it according to the log EKF2_EV_DELAY. The setup is now complete.
+
+test
+Open the first terminal and run mavros first. You should use the flight control IMU for the cartographer, so you must first open mavros.
+
+roslaunch mavros px4.launch
+1
+Then open the second terminal and run the cartographer
+
+roslaunch cartographer_ros hokuyo_2d.launch
+1
+If there is no error, mark ok, now switch the position mode, you can switch the flag normally without problems.
+You can test the data in a static hand and then test it in the physical.
+————————————————
+版权声明：本文为CSDN博主「dckwin」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_38649880/article/details/88372390
