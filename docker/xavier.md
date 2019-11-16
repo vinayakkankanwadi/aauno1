@@ -48,3 +48,5 @@ https://gist.github.com/JasonAtNvidia/e03e6675849d1d4049b85ea41efb2171#file-txdo
 Short Bash script to enable use of the GPU within a docker container running on an NVIDIA Jetson TX2. Place inside /usr/local/bin/, chmod +x txdocker, ensure it is in your system PATH, and use just as you would the docker command.
  txdocker
 
+
+docker pull px4io/px4-dev-ros-melodic
