@@ -50,3 +50,11 @@ Short Bash script to enable use of the GPU within a docker container running on 
 
 
 docker pull px4io/px4-dev-ros-melodic
+
+
+export ROS_MASTER_URI=http://localhost:11311
+export ROS_IP=192.168.0.15 172.17.0.1 
+The Catkin Workspace has been created
+Please modify the placeholders for ROS_MASTER_URI and ROS_IP placed into the file /home/xavier/.bashrc
+to suit your environment.
+
